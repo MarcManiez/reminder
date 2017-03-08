@@ -1,0 +1,25 @@
+<table class="table table-condensed">
+  <tr>
+    <th>let's do it!</th>
+    <th>title</th>
+    <th>description</th>
+    <th>frequency</th>
+    <th>cost</th>
+    <th>votes</th>
+    <th>done?</th>
+  </tr>
+  <tr ng-repeat="activity in activities">
+    <td><input type="checkbox" ng-model="activity.status" ng-checked="activity.status" ng-change="toggle(activity)"></td>
+    <td>{{activity.title}}</td>
+    <td>{{activity.description}}</td>
+    <td>{{activity.frequency}}</td>
+    <td>{{activity.cost}}</td>
+    <td>{{activity.satisfaction}}</td>
+    <td ng-model="activity.completed" ng-switch on ="activity.completed">
+      <input type="checkbox" ng-click="completeActivity(activity, {executionDate: makeDate()})" ng-switch-when="false">
+      <span ng-switch-when="true">{{activity.time}}</span>
+    </td>
+  </tr>
+</table>
+
+<pre>{{activities}}</pre>

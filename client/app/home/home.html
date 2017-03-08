@@ -1,0 +1,66 @@
+<form action="" ng-submit="sendActivity(activity)">
+  <div class="row">
+    <label for="title">title</label> 
+    <input class="text-field" id="title" type="text" ng-model="activity.title" placeholder="Flower bouquet" required>
+
+    <label for="cost">cost</label> 
+    <input class="text-field" id="cost" type="number" ng-model="activity.cost" placeholder="20">
+  </div>
+  <div class="row">
+    <label for="description">description</label>
+    <textarea class="text-field" id="description" name="" ng-model="activity.description" placeholder="A timeless classic. Don't vase them, keep them in wrapping for guaranteed extra points.'" required>   
+    </textarea>
+  </div>
+  
+  <div class="row">
+    <label for="frequency">frequency</label> 
+    <select id="frequency" name="" ng-model="activity.times" required>
+      <option value="" disabled selected>3</option>
+      <option value="1">1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
+      <option value="5">5</option>
+      <option value="6">6</option>
+      <option value="7">7</option>
+      <option value="8">8</option>
+      <option value="9">9</option>
+      <option value="10">10, wow!</option>
+    </select>
+
+    <select name="" ng-model="activity.period" placeholder="weeks" required>
+      <option value="" disabled selected>week</option>
+      <option value="hour">hour</option>
+      <option value="day">day</option>
+      <option value="week">week</option>
+      <option value="month">month</option>
+      <option value="year">year</option>
+    </select>
+    <input type="submit">
+  </div>
+
+</form>
+
+<table class="table table-condensed">
+  <tr>
+    <th>let's do it!</th>
+    <th>title</th>
+    <th>description</th>
+    <th>frequency</th>
+    <th>cost</th>
+    <th>votes</th>
+  </tr>
+  <tr ng-repeat="activity in activities">
+    <td><input type="checkbox" ng-model="activity.status" ng-checked="activity.status" ng-change="toggle(activity)"></td>
+    <td>{{activity.title}}</td>
+    <td>{{activity.description}}</td>
+    <td>{{activity.frequency}}</td>
+    <td>{{activity.cost}}</td>
+    <td>{{activity.satisfaction}}</td>
+  </tr>
+</table>
+
+<!--<pre>
+{{activity}}
+{{activities}}
+</pre>-->

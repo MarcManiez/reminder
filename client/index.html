@@ -1,0 +1,26 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>remind.er</title>
+    <link rel="stylesheet" href="./styles/main.css">
+  </head>
+  <body ng-app="remind.er" ng-controller="appController">
+    <h1 class="logo">remind.er</h1>
+      <ul class="main-nav">
+        <li class="menu-item"><a ng-click="route('home')">HOME</a></li>
+        <li class="menu-item" ><a ng-click="route('list')">LIST</a></li>
+      </ul>
+    <div ng-view>
+
+    </div>
+    <script src="lib/angular/angular.js"></script>
+    <script src="lib/angular-route/angular-route.js"></script>
+    <script src="lib/datejs/date.js"></script>
+
+    <script src="app/app.js"></script>
+    <script src="app/factories.js"></script>
+    <script src="app/home/home.js"></script>
+    <script src="app/list/list.js"></script>
+  </body>
+</html>
